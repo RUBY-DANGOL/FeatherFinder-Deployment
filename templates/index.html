@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 450px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        input[type="submit"]:hover {
+            background-color: #219150;
+        }
+        .model-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                margin: 50px auto;
+                padding: 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feather Finder</h1>
+        <title>Bird Image Classifier</title>
+        <div class="logo">
+            <img src="https://cdn.sologo.ai/temp24h/logo/32bbd91e-8cba-4938-a8ff-f96e01be4361.jpeg" width="300" height="200" alt="Logo">
+        </div>
+        <form action="/predict/" enctype="multipart/form-data" method="post">
+            <label for="file">Select an Image</label>
+            <input type="file" name="file" accept="image/*" required>
+
+            <div class="model-info">
+                <p>Using <strong>Ensemble Model</strong> for classification.</p>
+            </div>
+
+            <input type="submit" value="Classify Image">
+        </form>
+    </div>
+</body>
+</html>

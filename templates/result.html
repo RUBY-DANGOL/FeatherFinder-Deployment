@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 450px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .result {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .confidence {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #219150;
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                margin: 50px auto;
+                padding: 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .result {
+                font-size: 18px;
+            }
+            .confidence {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Classification Result</h2>
+        <div class="result">
+            The image is classified as:<br><strong>{{ result['class'] }}</strong>
+        </div>
+        <div class="confidence">
+            Confidence: {{ '{:.2f}'.format(result['confidence'] * 100) }}%
+        </div>
+        <a href="/" class="button">Classify Another Image</a>
+    </div>
+</body>
+</html>
